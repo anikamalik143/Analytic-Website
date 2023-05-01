@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Analytic-Website</title>
+	<style>
+		.container{
+			width: 99%;
+			height: 300vh;
+			background-color: lightgray;
+		}
+		.logo-box{
+			width: 96.5vw;
+			height: 5vh;
+			background-color: black;
+		}
+		.logo{
+			color: white;
+			margin-left: 92vw;
+		}
+		.dashboard-row{
+			display: flex;
+		}
+		.welcome-box{
+			width: 20vw;
+			height: 15.9vh;
+			background-color: white;
+		}
+		.mike-row{
+			display: flex;
+		}
+		.welcome-img img{
+			margin-top: 2.5vh;
+			margin-left: 1vw;
+		}
+		.welcomemike{
+			display: flex;
+			margin-top: 6vh;
+			margin-left: 4vw;
+		}
+		.mikeimg-row{
+			display: flex;
+		}
+		.mike-img {
+			margin-left: 8vw;
+		}
+		.dashboard-img{
+			margin-left: 2vw;
+			margin-top: 6vh;
+		}
+		.mydashboard{
+			margin-left: 0.5vw;
+			margin-top: 7vh;
+		}
+		.overview-line{
+			width: 18vw;
+			height: .2vh;
+			background-color: darkgrey;
+		}
+		.overview-box{
+			width:20vw;
+			height: 10vh;
+			background-color: white;
+		}
+		.dashboard{
+			margin-left: 1vw;
+		}
+		.overblue-box{
+			width: 20vw;
+			height: 5vh;
+			background-color:#2196f3;
+			margin-top: 1vh;
+		}
+		.overbluebox-row{
+			display: flex;
+		}
+		.overview-img{
+			margin-left: 1vw;
+		}
+		.overview{
+			display: flex;
+			margin-left: 1vw;
+			margin-top: 1vh;
+			color: white;
+		}
+		.message-row{
+			display: flex;
+		}
+		.message-box {
+			margin-left: 20vw;
+			width: 15vw;
+			height: 16vh;
+			background-color: #f44336;
+		}
+		.messages{
+			color: white;
+			margin-left: 1vw;
+		}
+		.views-box {
+			margin-left: 2vw;
+			width: 15vw;
+			height: 16vh;
+			background-color: #2196f3;
+		}
+		.views{
+			color: white;
+			margin-left: 1vw;
+		}
+		.shares-box {
+			margin-left: 2vw;
+			width: 15vw;
+			height: 16vh;
+			background-color: #009688;
+		}
+		.shares{
+			color: white;
+			margin-left: 1vw;
+		}
+		.users-box {
+			margin-left: 2vw;
+			width: 15vw;
+			height: 16vh;
+			background-color: #ff9800;
+		}
+		.users{
+			color: white;
+			margin-left: 1vw;
+		}
+		.views-box1{
+			width: 20vw;
+			height: 45vh;
+			background-color: white;
+		}
+		.views-row{
+			display: flex;
+		}
+		.views-img{
+			margin-left: 1vw;
+		}
+		.traffic-row{
+			display: flex;
+		}
+		.traffic-img{
+			margin-left: 1vw;
+		}
+		.traffic{
+			margin-top: 1vh;
+		}
+		.geo-row{
+			display: flex;
+		}
+		.geo-img{
+			margin-left: 1vw;
+		}
+		.geo{
+			margin-top: 1vh;
+			margin-left: 0.5vw;
+		}
+		.order-row{
+			display: flex;
+		}
+		.order-img{
+			margin-left: 1vw;
+		}
+		.order{
+			margin-top: 1vh;
+		}
+		.news-row{
+			display: flex;
+		}
+		.news-img{
+			margin-left: 1vw;
+		}
+		.news{
+			margin-top: 1vh;
+		}
+		.general-row{
+			display: flex;
+		}
+		.general-img{
+			margin-left: 1vw;
+		}
+		.general{
+			margin-top: 1vh;
+		}
+		.history-row{
+			display: flex;
+		}
+		.history-img{
+			margin-left: 1vw;
+		}
+		.history{
+			margin-top: 1vh;
+		}
+		.settings-row{
+			display: flex;
+		}
+		.settings-img{
+			margin-left: 1vw;
+		}
+		.settings{
+			margin-top: 1vh;
+		}
+		.viewsbox-row{
+			display: flex;
+		}
+		.regions{
+			margin-left: 2vw;
+			margin-top: 2.5vh;
+		}
+		.feeds{
+			margin-left: 18vw;
+			margin-top: 2.5vh;
+		}
+		.region-img img{
+         width: 25vw;
+         height: 37vh;
+         margin-top: 7vh;
+		}
+		.newrecord-box{
+			width: 24vw;
+			height: 5.5vh;
+			background-color: white;
+			margin-top: 6vh;
+		}
+		.database-box{
+			width: 24vw;
+			height: 5.5vh;
+			background-color: darkgrey;
+		}
+		.newrecord2-box{
+			width: 24vw;
+			height: 5.5vh;
+			background-color: white;
+		}
+		.newcomment-box{
+			width: 24vw;
+			height: 5.5vh;
+			background-color: darkgrey;
+		}
+		.check-box{
+			width: 24vw;
+			height: 5.5vh;
+			background-color: white;
+		}
+		.cpu-box{
+			width: 24vw;
+			height: 5.5vh;
+			background-color: darkgrey;
+		}
+		.newshare-box{
+			width: 24vw;
+			height: 5.5vh;
+			background-color: white;
+		}
+		.generalstate{
+			margin-left: 22vw;
+			margin-top: 4vh;
+		}
+		.newvisitors{
+			margin-left: 22vw;
+			margin-top: 2vh;
+		}
+		.visitors-greenbox{
+			width: 15vw;
+			height: 4vh;
+			margin-left: 22vw;
+			background-color: seagreen;
+			margin-top: 1vh;
+		}
+		.twentyfive{
+			height: 1vh;
+			color: white;
+			margin-left: 6vw;
+		}
+		.visitors-row{
+			display: flex;
+		}
+		.visitors-greybox{
+			width: 50vw;
+			height: 4vh;
+			margin-top: 1vh;
+			background-color: darkgrey;
+		}
+		.newusers{
+			margin-left: 22vw;
+			margin-top: 2vh;
+		}
+		.users-orangebox{
+			width: 32vw;
+			height: 4vh;
+			margin-left: 22vw;
+			background-color: orange;
+			margin-top: 1vh;
+		}
+		.fifty{
+			height: 1vh;
+			color: black;
+			margin-left: 16vw;
+		}
+		.users-row{
+			display: flex;
+		}
+		.users-greybox{
+			width: 33vw;
+			height: 4vh;
+			margin-top: 1vh;
+			background-color: darkgrey;
+		}
+		.bouncerate{
+			margin-left: 22vw;
+			margin-top: 2vh;
+		}
+		.bounce-redbox{
+			width: 48vw;
+			height: 4vh;
+			margin-left: 22vw;
+			background-color: red;
+			margin-top: 1vh;
+		}
+		.seventyfive{
+			height: 1vh;
+			color: white;
+			margin-left: 26vw;
+		}
+		.bounce-row{
+			display: flex;
+		}
+		.bounce-greybox{
+			width: 17vw;
+			height: 4vh;
+			margin-top: 1vh;
+			background-color: darkgrey;
+		}
+		.countries{
+			margin-left: 22vw;
+			margin-top: 4vh;
+		}
+		.us-box{
+			width: 65vw;
+			height: 4vh;
+			background-color: white;
+			margin-left: 22vw;
+		}
+		.us-row1{
+			display: flex;
+		}
+		.unitedstates{
+			margin-left: 2vw;
+			margin-top: 0.5vh;
+		}
+		.sixtyfive{
+			margin-left: 37vw;
+			margin-top: 1vh;
+		}
+		.uk-box{
+			width: 65vw;
+			height: 4vh;
+			background-color: darkgrey;
+			margin-left: 22vw;
+		}
+		.uk-row1{
+			display: flex;
+		}
+		.uk{
+			margin-left: 2vw;
+			margin-top: 0.5vh;
+		}
+		.onefiftyseven{
+			margin-left: 41vw;
+			margin-top: 1vh;
+		}
+		.russia-box{
+			width: 65vw;
+			height: 4vh;
+			background-color: white;
+			margin-left: 22vw;
+		}
+		.russia-row1{
+			display: flex;
+		}
+		.russia{
+			margin-left: 2vw;
+			margin-top: 0.5vh;
+		}
+		.fiftysix{
+			margin-left: 40vw;
+			margin-top: 1vh;
+		}
+		.spain-box{
+			width: 65vw;
+			height: 4vh;
+			background-color: darkgrey;
+			margin-left: 22vw;
+		}
+		.spain-row1{
+			display: flex;
+		}
+		.spain{
+			margin-left: 2vw;
+			margin-top: 0.5vh;
+		}
+		.twentyone{
+			margin-left: 40vw;
+			margin-top: 1vh;
+		}
+		.india-box{
+			width: 65vw;
+			height: 4vh;
+			background-color: white;
+			margin-left: 22vw;
+		}
+		.india-row1{
+			display: flex;
+		}
+		.india{
+			margin-left: 2vw;
+			margin-top: 0.5vh;
+		}
+		.ninteen{
+			margin-left: 41vw;
+			margin-top: 1vh;
+		}
+		.france-box{
+			width: 65vw;
+			height: 4vh;
+			background-color: darkgrey;
+			margin-left: 22vw;
+		}
+		.france-row1{
+			display: flex;
+		}
+		.france{
+			margin-left: 2vw;
+			margin-top: 0.5vh;
+		}
+		.fifteen{
+			margin-left: 40vw;
+			margin-top: 1vh;
+		}
+		.morecountries-box{
+			width: 9vw;
+			height: 4vh;
+			margin-left: 22vw;
+			margin-top: 2vh;
+			background-color: black;
+		}
+		.morecountries{
+			color: white;
+			text-align: center;
+			margin-top: 1vh;
+		}
+		.recentusers{
+			margin-top: 4vh;
+			margin-left: 22vw;
+		}
+		.recentusers-box{
+			width: 65vw;
+			height: 28vh;
+			background-color: white;
+			margin-left: 22vw;
+		}
+		.recentusers-row1{
+			display: flex;
+		}
+		.mike{
+			margin-left: 1vw;
+			margin-top: 3vh;
+		}
+		.mike-line{
+			width: 65vw;
+			height: .2vh;
+			background-color: darkgrey;
+		}
+		.recentusers-row2{
+			display: flex;
+		}
+		.jill{
+			margin-left: 1vw;
+			margin-top: 3vh;
+		}
+		.jill-line{
+			width: 65vw;
+			height: .2vh;
+			background-color: darkgrey;
+		}
+		.recentusers-row3{
+			display: flex;
+		}
+		.jane{
+			margin-left: 1vw;
+			margin-top: 3vh;
+		}
+		.recentcomment{
+			margin-top: 4vh;
+			margin-left: 22vw;
+		}
+		.john-img img{
+			width: 4vw;
+			height: 8vh;
+			margin-left: 22vw;
+		}
+		.recentcomment-row1{
+			display: flex;
+		}
+		.john{
+			margin-left: 3vw;
+			margin-top: 1vh;
+		}
+		.johntext{
+			margin-left: 1vw;
+			margin-top: 1vh;
+			color: darkgrey;
+		}
+		.bo-img img{
+			width: 4vw;
+			height: 8vh;
+			margin-left: 22vw;
+			margin-top: 4vh;
+		}
+		.recentcomment-row2{
+			display: flex;
+		}
+		.bo{
+			margin-left: 3vw;
+			margin-top: 1vh;
+		}
+		.botext{
+			margin-left: 1vw;
+			margin-top: 3vh;
+			color: darkgrey;
+		}
+		.black-box{
+			width: 65vw;
+			height: 40vh;
+			background-color: black;
+			margin-left: 22vw;
+			margin-top: 4vh;
+		}
+		.demographic{
+			color: white;
+			margin-left: 4vw;
+			margin-top: 3vh;
+		}
+		.demographic-row{
+			display: flex;
+		}
+		.system{
+			color: white;
+			margin-left: 16vw;
+			margin-top: 3vh;
+		}
+		.target{
+			color: white;
+			margin-left: 17vw;
+			margin-top: 3vh;
+		}
+		.demo-green{
+			width: 18vw;
+			height: 1vh;
+			background-color: green;
+			margin-left: 4vw;
+			margin-top: 1vh;
+		}
+		.demographic-row1{
+			display: flex;
+		}
+		.demo-red{
+			width: 18vw;
+			height: 1vh;
+			background-color: red;
+			margin-left: 6vw;
+			margin-top: 1vh;
+		}
+		.demo-yellow{
+			width: 16vw;
+			height: 1vh;
+			background-color: yellow;
+			margin-left: 2vw;
+			margin-top: 1vh;
+		}
+		.language{
+			color: white;
+			margin-left: 4vw;
+			margin-top: 4vh;
+		}
+		.demographic-row2{
+			display: flex;
+		}
+		.browser{
+			color: white;
+			margin-left: 18vw;
+			margin-top: 4vh;
+		}
+		.users1{
+			color: white;
+			margin-left: 17vw;
+			margin-top: 4vh;
+		}
+		.country1{
+			color: white;
+			margin-left: 4vw;
+			margin-top: 4vh;
+		}
+		.demographic-row3{
+			display: flex;
+		}
+		.os{
+			color: white;
+			margin-left: 19vw;
+			margin-top: 4vh;
+		}
+		.active{
+			color: white;
+			margin-left: 19vw;
+			margin-top: 4vh;
+		}
+		.city1{
+			color: white;
+			margin-left: 4vw;
+			margin-top: 4vh;
+		}
+		.demographic-row4{
+			display: flex;
+		}
+		.more{
+			color: white;
+			margin-left: 21vw;
+			margin-top: 4vh;
+		}
+		.geo1{
+			color: white;
+			margin-left: 18vw;
+			margin-top: 4vh;
+		}
+		.interests1{
+			color: white;
+			margin-left: 47.2vw;
+			margin-top: 4vh;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="logo-box">
+			<div class="logo">Logo</div>
+		</div>
+		<div class="dashboard-row">
+			<div class="welcome-box">
+				<div class="mike-row">
+				<div class="welcome-img">
+					<img src="C:\Users\user\Desktop\Analytic website/mike.png">
+				</div>
+				<div class="welcomemike">Welcome:Mike</div>
+			    </div>
+			    <div class="mikeimg-row">
+			    <div class="mike-img">
+					<img src="C:\Users\user\Desktop\Analytic website/message.png">
+					<img src="C:\Users\user\Desktop\Analytic website/user.png">
+					<img src="C:\Users\user\Desktop\Analytic website/settings.png">
+				</div>
+			    </div>
+			</div>
+			<div class="dashboard-img">
+				<img src="C:\Users\user\Desktop\Analytic website/dashboard.png">
+			</div>
+			<div class="mydashboard">My Dashboard</div>
+		</div>
+		<div class="overview-row">
+			<div class="overview-line">
+			</div>
+			<div class="overview-box">
+				<div class="dashboard">Dashboard</div>
+					<div class="overblue-box">
+						<div class="overbluebox-row">
+						<div class="overview-img">
+						<img src="C:\Users\user\Desktop\Analytic website/overview.png">
+					    </div>
+					    <div class="overview">Overview</div>
+					    </div>
+				    </div>
+			</div>
+			<div class="message-row">
+			<div class="message-box">
+				<div class="message-img">
+				<img src="C:\Users\user\Desktop\Analytic website/messages.png">
+			    </div>
+			    <div class="messages">Messages</div>
+			</div>
+			<div class="views-box">
+				<div class="views-img">
+				<img src="C:\Users\user\Desktop\Analytic website/views.png">
+			    </div>
+			    <div class="views">Views</div>
+			</div>
+			<div class="shares-box">
+				<div class="shares-img">
+				<img src="C:\Users\user\Desktop\Analytic website/shares.png">
+			    </div>
+			    <div class="shares">Shares</div>
+			</div>
+			<div class="users-box">
+				<div class="users-img">
+				<img src="C:\Users\user\Desktop\Analytic website/users.png">
+			    </div>
+			    <div class="users">Users</div>
+			</div>
+		</div>
+		</div>
+		<div class="viewsbox-row">
+			<div class="views-box1">
+				<div class="views-row">
+				<div class="views-img">
+					<img src="C:\Users\user\Desktop\Analytic website/views1.png">
+				</div>
+				<div class="views1">Views</div>
+			    </div>
+				<div class="traffic-row">
+				<div class="traffic-img">
+					<img src="C:\Users\user\Desktop\Analytic website/traffic.png">
+				</div>
+				<div class="traffic">Traffic</div>
+			    </div>
+			    <div class="geo-row">
+				<div class="geo-img">
+					<img src="C:\Users\user\Desktop\Analytic website/geo.png">
+				</div>
+				<div class="geo">Geo</div>
+			    </div>
+			     <div class="order-row">
+				<div class="order-img">
+					<img src="C:\Users\user\Desktop\Analytic website/orders.png">
+				</div>
+				<div class="order">Orders</div>
+			    </div>
+			     <div class="news-row">
+				<div class="news-img">
+					<img src="C:\Users\user\Desktop\Analytic website/news.png">
+				</div>
+				<div class="news">News</div>
+			    </div>
+			     <div class="general-row">
+				<div class="general-img">
+					<img src="C:\Users\user\Desktop\Analytic website/general.png">
+				</div>
+				<div class="general">General</div>
+			    </div>
+			     <div class="history-row">
+				<div class="history-img">
+					<img src="C:\Users\user\Desktop\Analytic website/history.png">
+				</div>
+				<div class="history">History</div>
+			    </div>
+			     <div class="settings-row">
+				<div class="settings-img">
+					<img src="C:\Users\user\Desktop\Analytic website/settings.png">
+				</div>
+				<div class="settings">Settings</div>
+			    </div>
+			</div>
+			<div class="regions">Regions</div>
+			<div class="region-img">
+				<img src="C:\Users\user\Desktop\Analytic website/regions.png">
+			</div>
+			<div class="feeds">Feeds</div>
+				<div class="newrecord-box">
+				<div class="newrecord-img">
+					<img src="C:\Users\user\Desktop\Analytic website/feeds1.png">
+					New records over go views
+				</div>
+			    <div class="database-box">
+				<div class="database-img">
+					<img src="C:\Users\user\Desktop\Analytic website/feeds2.png">
+					Database error
+				</div>
+				 <div class="newrecord2-box">
+				<div class="newrecord2-img">
+					<img src="C:\Users\user\Desktop\Analytic website/feeds3.png">
+					New records over 40 users
+				</div>
+				<div class="newcomment-box">
+				<div class="newcomment-img">
+					<img src="C:\Users\user\Desktop\Analytic website/feeds4.png">
+					New comments
+				</div>
+				<div class="check-box">
+				<div class="check-img">
+					<img src="C:\Users\user\Desktop\Analytic website/feeds5.png">
+					Check transactions
+				</div>
+				<div class="cpu-box">
+				<div class="cpu-img">
+					<img src="C:\Users\user\Desktop\Analytic website/feeds7.png">
+					CPU overloaded
+				</div>
+				<div class="newshare-box">
+				<div class="newshare-img">
+					<img src="C:\Users\user\Desktop\Analytic website/feeds8.png">
+				News Shares
+				</div>
+			    </div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+</div>
+
+		<div class="generalstate-row">
+			<div class="generalstate"><h4>General State</h4></div>
+			<div class="newvisitors">New Visitors</div>
+		</div>
+		<div class="visitors-row">
+			<div class="visitors-greenbox">
+				<div class="twentyfive">+25%</div>
+			</div>
+			<div class="visitors-greybox">
+			</div>
+		</div>
+		<div class="newusers">New Users</div>
+		<div class="users-row">
+			<div class="users-orangebox">
+				<div class="fifty">50%</div>
+			</div>
+			<div class="users-greybox">
+			</div>
+		</div>
+		<div class="bouncerate">Bounce Rate</div>
+		<div class="bounce-row">
+			<div class="bounce-redbox">
+				<div class="seventyfive">75%</div>
+			</div>
+			<div class="bounce-greybox">
+			</div>
+		</div>
+		<div class="countries"><h4>Countries</h4></div>
+		<div class="us-row">
+			<div class="us-box">
+				<div class="us-row1">
+				<div class="unitedstates">United States</div>
+				<div class="sixtyfive">65%</div>
+			    </div>
+			</div>
+		</div>
+		<div class="uk-row">
+			<div class="uk-box">
+				<div class="uk-row1">
+				<div class="uk">UK</div>
+				<div class="onefiftyseven">157%</div>
+			    </div>
+			</div>
+		</div>
+		<div class="russia-row">
+			<div class="russia-box">
+				<div class="russia-row1">
+				<div class="russia">Russia</div>
+				<div class="fiftysix">56%</div>
+			    </div>
+			</div>
+		</div>
+		<div class="spain-row">
+			<div class="spain-box">
+				<div class="spain-row1">
+				<div class="spain">Spain</div>
+				<div class="twentyone">21%</div>
+			    </div>
+			</div>
+		</div>
+		<div class="india-row">
+			<div class="india-box">
+				<div class="india-row1">
+				<div class="india">India</div>
+				<div class="ninteen">19%</div>
+			    </div>
+			</div>
+		</div>
+		<div class="france-row">
+			<div class="france-box">
+				<div class="france-row1">
+				<div class="france">France</div>
+				<div class="fifteen">15%</div>
+			    </div>
+			</div>
+		</div>
+		<div class="morecountries-box">
+			<div class="morecountries">More Countries</div>
+		</div>
+		<div class="recentusers"><h5>Recent Users</h5></div>
+		<div class="recentusers-box">
+			<div class="recentusers-row1">
+				<img src="C:\Users\user\Desktop\Analytic website/mike.png">
+				<div class="mike">Mike</div>
+			</div>
+			<div class="mike-line">
+			</div>
+			<div class="recentusers-row2">
+				<img src="C:\Users\user\Desktop\Analytic website/jill.png">
+				<div class="jill">Jill</div>
+			</div>
+			<div class="jill-line">
+			</div>
+			<div class="recentusers-row3">
+				<img src="C:\Users\user\Desktop\Analytic website/jane.png">
+				<div class="jane">Jane</div>
+			</div>
+		</div>
+		<div class="recentcomment"><h5>Recent Comment</h5></div>
+		<div class="recentcomment-row1">
+			<div class="john-img">
+			<img src="C:\Users\user\Desktop\Analytic website/john.png">
+		    </div>
+		    <div class="john">John</div>
+		    <div class="johntext">Sep 29 2014 9:12PM</div>
+		    <br/>
+		    <br/>
+		    		Keep up the great work.I am cheering for you!!Lorem ipsum dolor sit amet,consectutor 
+		    		adisciping elit
+		    		<br/>
+		    		Keep up the great work.I am cheering for you!!Lor
+		</div>
+		<div class="recentcomment-row2">
+			<div class="john-img">
+			<img src="C:\Users\user\Desktop\Analytic website/bo.png">
+		    </div>
+		    <div class="bo">Bo</div>
+		    <div class="botext">Sep 29 2014 9:12PM</div>
+		    <br/>
+		    <br/>
+		    		Keep up the great work.I am cheering for you!!Lorem ipsum dolor sit amet,consectutor 
+		</div>
+		<div class="black-box">
+			<div class="demographic-row">
+				<div class="demographic">Demographic</div>
+				<div class="system">System</div>
+				<div class="target">Target</div>
+			</div>
+			<div class="demographic-row1">
+				<div class="demo-green">
+				</div>
+				<div class="demo-red">
+				</div>
+				<div class="demo-yellow">
+				</div>
+			</div>
+			<div class="demographic-row2">
+				<div class="language">Language</div>
+				<div class="browser">Browser</div>
+				<div class="users1">Users</div>
+			</div>
+			<div class="demographic-row3">
+				<div class="country1">Country</div>
+				<div class="os">OS</div>
+				<div class="active">Active</div>
+			</div>
+			<div class="demographic-row4">
+				<div class="city1">City</div>
+				<div class="more">More</div>
+				<div class="geo1">Geo</div>
+			</div>
+			<div class="demographic-row5">
+				<div class="interests1">Interest</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
